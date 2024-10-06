@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:ital,wght@0,100;0,400;1,700&display=swap');
 
-
 /* reset  */
 * {
     margin: 0;
@@ -63,6 +62,7 @@ ul {
     padding-inline: var(--padding-inline-section);
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
+    overflow: hidden;
 }
 
 .flex {
@@ -88,6 +88,7 @@ ul {
     padding: 12px 24px;
     transition: 0.3s ease-out;
     border: 0.1px solid transparent;
+    text-align: center;
 }
 
 .primary-button:hover {
@@ -132,8 +133,10 @@ ul {
 /* nav  */
 
 .main-nav {
+    z-index: 3;
     justify-content: space-between;
     margin-top: 20px;
+    position: relative;
 
 }
 
@@ -151,6 +154,10 @@ ul {
 
 }
 
+.nav-toggle {
+    display: none;
+}
+
 /* header section  */
 header {
     padding: 50px var(--padding-inline-section) 0;
@@ -162,7 +169,7 @@ header {
 }
 
 .header-right img {
-    width: 600px;
+    width: 100%;
 }
 
 .header-left h1 {
@@ -186,7 +193,10 @@ header {
 }
 
 .logos {
-    justify-content: space-between;
+    background-color: white;
+    justify-content: space-evenly;
+    gap: 20px;
+    padding: 10px;
     flex-wrap: wrap;
 }
 
@@ -206,6 +216,7 @@ header {
 
 .features-header {
     text-align: center;
+    margin-bottom: 40px;
 }
 
 .features-header h2 {
@@ -215,7 +226,7 @@ header {
 .features-area {
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 40px;
+    gap: 20px;
     margin-top: 20px;
 }
 
@@ -238,7 +249,10 @@ header {
 
 .big-feature-container {
     gap: 30px;
+}
 
+#second-big-feature {
+    flex-direction: row-reverse;
 }
 
 .feature-img img {
@@ -252,6 +266,10 @@ header {
 
 /* example section */
 
+.example-section {
+    padding: 80px var(--padding-inline-section);
+}
+
 .examples-header {
     flex-direction: column;
     gap: 20px;
@@ -261,7 +279,7 @@ header {
 .examples-card {
     width: 23%;
     position: relative;
-    min-height: 300px;
+    height: 300px;
     background: black;
     background: linear-gradient(rgb(0, 0, 0, 0.1), rgb(0, 0, 0, 0.8)), url(assets/asset\ 35.jpeg);
     transition: 0.3s ease-out;
@@ -282,6 +300,7 @@ header {
 .examples-area {
     justify-content: space-between;
     margin-block: 30px;
+    flex-wrap: wrap;
 }
 
 .examples-card:nth-child(3) {
@@ -300,6 +319,7 @@ header {
     flex-direction: column;
     gap: 30px;
     color: white;
+    text-align: center;
 }
 
 .cta-section {
@@ -312,7 +332,7 @@ header {
     margin-top: 20px;
 }
 
-.cta-section-container a{
+.cta-section-container a {
     color: white;
 }
 
@@ -344,6 +364,7 @@ footer {
 .subfooter-container {
     justify-content: center;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 /* .container1 {
@@ -363,7 +384,7 @@ footer {
 
 /* back to top  */
 
-.back-to-top{
+.back-to-top {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
@@ -378,19 +399,19 @@ footer {
     border: 1px solid transparent;
 }
 
-.back-to-top span{
+.back-to-top span {
     color: white;
     font-size: 1.5rem;
     transition: 0.3s ease-out;
 }
 
-.back-to-top:hover{
+.back-to-top:hover {
     border: 1px solid #2294ed;
     background-color: white;
     box-shadow: 0 0 5px var(--primary-text-color);
 }
 
-.back-to-top:hover span{
+.back-to-top:hover span {
     color: #2294ed;
     transform: translateY(-4px);
 }
