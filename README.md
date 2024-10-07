@@ -8,4 +8,8 @@ Gonna Make more ahead to maintain a Healthy Portfolio.
 Made it responsive by using flex, Media Query and little bit of JS functionalities.
 Added a New Navigation button with JS.
 
+7-9-24:
+Updated a small transfrom effect at examples-card div, when hovering the card pops up.
+(Wasn't a Big Update tho)
+
 Please Contribute and add functionalities to it.
