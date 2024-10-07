@@ -287,6 +287,7 @@ header {
 
 .examples-card:hover {
     box-shadow: 0 0 20px black;
+    transform: translateY(-10px);
 }
 
 .card-text {
