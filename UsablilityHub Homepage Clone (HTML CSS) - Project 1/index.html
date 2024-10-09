@@ -31,6 +31,7 @@
                     <li><a href="#" class="hover-links">Customers</a></li>
                     <li><a href="#" class="hover-links">Pricing</a></li>
                     <li><a href="#" class="hover-links">Resource</a></li>
+                    <div class="toggle"></div>
                     <li><a href="#" class="hover-links secondary-button">Sign in</a></li>
                     <li><a href="#" class="hover-links primary-button">Sign up</a></li>
                 </ul>
@@ -204,7 +205,7 @@
 
     <footer>
         <div class="container flex footer-container">
-            <a href="#" class="company-logo">
+            <a href="#" class="company-logo1">
                 <img src="assets/asset 1.png" alt="company logo">
             </a>
             <div class="link-column flex">
@@ -262,6 +263,34 @@
         togglebutton.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         })
+
+        //Light/Dark mode
+        const body = document.querySelector("body"),// p = document.querySelector("p"),
+            toggle = document.querySelector(".toggle");
+
+            let getMode = localStorage.getItem("mode");
+            if(getMode && getMode === "dark"){
+                body.classList.add("dark");
+                // p.classList.add("dark");
+                toggle.classList.add("active");
+            }
+            console.log(getMode);
+
+            toggle.addEventListener("click", () => {
+                body.classList.toggle("dark");
+                // p.classList.toggle("dark");
+
+                if(!body.classList.contains("dark")){
+                    return localStorage.setItem("mode", "light");
+                }
+                // if(!p.classList.contains("dark")){
+                //     return localStorage.setItem("mode", "light");
+                // }
+                
+                return localStorage.setItem("mode", "dark");
+            })
+
+        toggle.addEventListener("click", () => toggle.classList.toggle("active"));
 
     </script>
 
