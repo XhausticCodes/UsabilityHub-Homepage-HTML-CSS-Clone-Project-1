@@ -12,4 +12,10 @@ Added a New Navigation button with JS.
 Updated a small transfrom effect at examples-card div, when hovering the card pops up.
 (Wasn't a Big Update tho)
 
+9-10-24:
+Added a new Toggle button for Dark/Light theme - used little bit of js (i got no clue, gonna complete js very soon), But the code worked anyway.
+Slight changes on examples-card hover property.
+This Code need to be modified, some of the button are not aligned and the color texture is sh*t in dark theme.
+
+
 Please Contribute and add functionalities to it.
