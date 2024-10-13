@@ -213,11 +213,79 @@ body.dark .company-logo img {
 .toggle {
     height: 25px;
     width: 50px;
+    background-color: transparent;
+    position: relative;
+    border-radius: 100px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rbgs(0, 0, 0, 0.1);
+}
+
+.toggle-glow {
+    height: 25px;
+    width: 50px;
     background-color: #fff;
     position: relative;
     border-radius: 100px;
     cursor: pointer;
     box-shadow: 0 5px 10px rbgs(0, 0, 0, 0.1);
+    border: none;
+    z-index: 0;
+}
+
+.toggle-glow:after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    border-radius: 100px;
+}
+
+.toggle-glow::before {
+    content: '';
+    background: linear-gradient(45deg,
+            #00ccff, #0091ff, #005799, #011a2e, black, #00ccff);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 100px;
+    opacity: 0;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 270% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.toggle-glow:hover::before {
+    opacity: 1;
+}
+
+.toggle-glow:active:after {
+    background: transparent;
+}
+
+.toggle-glow:active {
+    color: #000;
 }
 
 .toggle::before {

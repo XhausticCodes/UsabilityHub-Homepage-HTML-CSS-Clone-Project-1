@@ -31,7 +31,9 @@
                     <li><a href="#" class="hover-links">Customers</a></li>
                     <li><a href="#" class="hover-links">Pricing</a></li>
                     <li><a href="#" class="hover-links">Resource</a></li>
-                    <div class="toggle"></div>
+                    <div class="toggle-glow">
+                        <div class="toggle"></div>0
+                    </div>
                     <li><a href="#" class="hover-links secondary-button">Sign in</a></li>
                     <li><a href="#" class="hover-links primary-button">Sign up</a></li>
                 </ul>
@@ -268,27 +270,27 @@
         const body = document.querySelector("body"),// p = document.querySelector("p"),
             toggle = document.querySelector(".toggle");
 
-            let getMode = localStorage.getItem("mode");
-            if(getMode && getMode === "dark"){
-                body.classList.add("dark");
-                // p.classList.add("dark");
-                toggle.classList.add("active");
+        let getMode = localStorage.getItem("mode");
+        if (getMode && getMode === "dark") {
+            body.classList.add("dark");
+            // p.classList.add("dark");
+            toggle.classList.add("active");
+        }
+        console.log(getMode);
+
+        toggle.addEventListener("click", () => {
+            body.classList.toggle("dark");
+            // p.classList.toggle("dark");
+
+            if (!body.classList.contains("dark")) {
+                return localStorage.setItem("mode", "light");
             }
-            console.log(getMode);
+            // if(!p.classList.contains("dark")){
+            //     return localStorage.setItem("mode", "light");
+            // }
 
-            toggle.addEventListener("click", () => {
-                body.classList.toggle("dark");
-                // p.classList.toggle("dark");
-
-                if(!body.classList.contains("dark")){
-                    return localStorage.setItem("mode", "light");
-                }
-                // if(!p.classList.contains("dark")){
-                //     return localStorage.setItem("mode", "light");
-                // }
-                
-                return localStorage.setItem("mode", "dark");
-            })
+            return localStorage.setItem("mode", "dark");
+        })
 
         toggle.addEventListener("click", () => toggle.classList.toggle("active"));
 
