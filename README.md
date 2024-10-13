@@ -17,5 +17,7 @@ Added a new Toggle button for Dark/Light theme - used little bit of js (i got no
 Slight changes on examples-card hover property.
 This Code need to be modified, some of the button are not aligned and the color texture is sh*t in dark theme.
 
+13-10-24:
+Added Glowing effect on Toggle Button using CSS.
 
 Please Contribute and add functionalities to it.
